@@ -11,12 +11,14 @@ import {
   LinkedInIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import basicBookImage from '@/images/photos/ibm-pc-jr-vb-hands-on.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
+        target="_blank"
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
@@ -61,60 +63,147 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+              I&apos;m Chuck Williams; patented software developer, AM/FM radio
+              show & podcast co-host, public speaker, crypto-freedom activist.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                I believe that evolved, empathic problem solving involves clear
+                assessment of reality, honest & transparent communications, and
+                the capability to push through to results. I make this work my
+                art. I intend to bring value crafting elegant interfaces &
+                experiences, identifying & pursuing growth opportunities, and
+                building software that aligns with my dream of voluntary
+                interactions for all individuals in a society free from
+                coercion.
+              </p>
+              <h5>Strengths include:</h5>
+              <ul className="list-disc pl-5">
+                <li>written & verbal business communications skills</li>
+                <li>
+                  software & agile team leadership, mentorship, & management
+                </li>
+                <li>emotional intelligence</li>
+                <li>public speaking</li>
+                <li>change management</li>
+                <li>research & best-practice training</li>
+                <li>measurable productivity</li>
+                <li>strategic planning</li>
+                <li>project direction</li>
+                <li>elegant problem solving</li>
+                <li>application code development</li>
+                <li>systems architecture</li>
+                <li>data design, management, & reporting</li>
+              </ul>
+              <h5>Hobbies & personal pursuits include:</h5>
+              <ul className="list-disc pl-5">
+                <li>purposeful living</li>
+                <li>Bitcoin & cryptocurrency</li>
+                <li>meditation</li>
+                <li>conscious empathy</li>
+                <li>radical transparency</li>
+                <li>human design, tarot & astrology</li>
+                <li>hobby psychology</li>
+                <li>camping</li>
+                <li>swimming</li>
+                <li>travel</li>
+              </ul>
+              <Image
+                src={basicBookImage}
+                alt=""
+                sizes="(min-width: 1024px) 14rem, 8rem"
+                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 md:hidden"
+              />
+              <p>
+                When I was 9 years old, entranced with my friend&apos;s display
+                of a xenon blinking apparatus, I enthusiastically ran back
+                through the humid summer midday to the single-wide trailer where
+                I lived with my dad in Hammond, MN, begging for a strobe light.
+                He refused with a dismissing wave of his hand saying, &ldquo;...
+                go do something with that computer over there...&rdquo;
+                gesturing at the very new IBM PC Jr sitting in the corner of the
+                kitchen.
+              </p>
+
+              <p>
+                With my possession of years of LEGO assembly
+                instruction-following skills, and in frustrated childhood angst,
+                I spent the next few hours reading through the &quot;Hands-on
+                BASIC&quot; manual that came with the beige-boxed-appliance,
+                determined to find out if I could make the cryptic and
+                unfamiliar technology do my bidding. By the end of that hot,
+                humid, Minnesota summer day in Hammond, I had the computer
+                screen blinking black & white in a timmed &quot;goto&quot; loop
+                with a &quot;wait&quot; command between screen redraws. By the
+                end of the next day, I had incrementally improved my first
+                strobe program with arrow commands to change speed and color.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                In that moment I knew that if I could make computers do what I
+                wanted, and combine it with art &amp;/or creativity, that I
+                would be living a sort of childhood dream!
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
+                Today I have been privileged to contribute this
+                childhood-spawned passion to over 56 software development teams,
+                hundreds of businesses, and literally millions of customers
+                through my client projects.
               </p>
               <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+                Tomorrow, I hope to make a legacy impact to the planet, sharing
+                what I&apos;ve learned about the synthesis between the
+                best-practices of building meaningful & useful software, the
+                flow state of human productivity, the Austrian economic value of
+                immutable cryptocurrency blockchains, and the neuro-linguistic
+                incentives of behavioral psychology.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
+              <SocialLink
+                href="https://twitter.com/chuckwilliams37"
+                icon={TwitterIcon}
+              >
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+              <SocialLink
+                href="https://www.instagram.com/chuckwilliams37/"
+                icon={InstagramIcon}
+                className="mt-4"
+              >
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+              <SocialLink
+                href="https://github.com/chuckwilliams37"
+                icon={GitHubIcon}
+                className="mt-4"
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/chuckcwilliams/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:chuck@screenscholar.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                chuck@screenscholar.com
               </SocialLink>
             </ul>
+            <div className="mt-12 pt-12">
+              <Image
+                src={basicBookImage}
+                alt=""
+                sizes="(min-width: 1024px) 20rem, 16rem"
+                className="invisible hidden aspect-square -rotate-6 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 md:visible md:block"
+              />
+            </div>
           </div>
         </div>
       </Container>
