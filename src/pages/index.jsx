@@ -368,12 +368,33 @@ export default function Home({ articles }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
+            {/* {articles.map((article) => (
               <Article key={article.slug} article={article} />
-            ))}
+            ))} */}
+
+            <p>
+              I believe that evolved, empathic problem solving involves clear
+              assessment of reality, honest & transparent communications, and
+              the capability to push through to results. I make this work my
+              art.
+            </p>
+            <p>
+              I intend to bring value crafting elegant interfaces & experiences,
+              identifying & pursuing growth opportunities, and building software
+              that aligns with my dream of voluntary interactions for all
+              individuals, and a society free from coercion.
+            </p>
+            <p>
+              Strengths include business communications skills, measurable
+              productivity, strategic planning, project direction, team
+              management, and elegant problem solving in the realms of
+              application code, systems architecture, and data management. Also
+              heavy advocate for purposeful living, empathy, meditation, and
+              radical transparency.
+            </p>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>
