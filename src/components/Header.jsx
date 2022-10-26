@@ -7,6 +7,27 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 import { Fragment, useEffect, useRef } from 'react'
+import { Button } from './Button'
+
+function ExternalLinkIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+    >
+      <path
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+      />
+    </svg>
+  )
+}
 
 function CloseIcon(props) {
   return (
@@ -135,15 +156,16 @@ function MobileNavigation(props) {
   )
 }
 
-function NavItem({ href, children }) {
+function NavItem({ href, children, target = '' }) {
   let isActive = useRouter().pathname === href
 
   return (
     <li>
       <Link
         href={href}
+        target={target}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block whitespace-nowrap px-3 py-2 transition',
           isActive
             ? 'text-teal-500 dark:text-teal-400'
             : 'hover:text-teal-500 dark:hover:text-teal-400'
@@ -163,10 +185,13 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        {/* <NavItem href="/articles">Articles</NavItem>
+        <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem> */}
+        <NavItem href="/uses">Uses</NavItem>
+        <NavItem href="https://calendly.com/screenscholar" target="_blank">
+          <ExternalLinkIcon className="inline-flex h-5 w-5 pb-1" /> Schedule
+        </NavItem>
       </ul>
     </nav>
   )

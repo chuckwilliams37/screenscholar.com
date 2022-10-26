@@ -20,11 +20,19 @@ import image5 from '@/images/photos/image-5.png'
 import logoScreenScholar from '@/images/logos/screenscholar.png'
 import logoFlote from '@/images/logos/flote.app.svg'
 import logoAgileThought from '@/images/logos/agilethought.jpg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoEquaGlobal from '@/images/logos/Equa-logo-white-transparent-300x131.png'
+import logoDash from '@/images/logos/dash_logo_2018_rgb_for_screens.png'
+import logoPlayerLync from '@/images/logos/playerlync_logo.png'
+import logoOppenheimerfunds from '@/images/logos/ofilogonotagblackdigital.png'
+import logoLevel3 from '@/images/logos/Level_3_Communications-Logo.png'
+import logoEffectiveUI from '@/images/logos/EffectiveUI_logo_4c-01v2.png'
+import logoNYK from '@/images/logos/nyk-logistics-megacarrier-logo-8902054D1D-seeklogo.png'
+import logoMOD from '@/images/logos/logo-mod-color.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+
+const resumeFilePath = '/assets/ChuckWilliams-Web2_3_1page_20221024.2158CT.pdf'
 
 function MailIcon(props) {
   return (
@@ -140,8 +148,8 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Screenscholar.com',
-      title: 'Founder, Consultant',
+      company: 'Screen Scholar',
+      title: 'Founder, Consultant, Developer, Freelance Contractor',
       logo: logoScreenScholar,
       start: 'May 2007',
       end: {
@@ -163,13 +171,63 @@ function Resume() {
       start: 'Jan 2020',
       end: 'Jan 2021',
     },
-    // {
-    //   company: 'Airbnb',
-    //   title: 'Product Designer',
-    //   logo: logoAirbnb,
-    //   start: '2014',
-    //   end: '2019',
-    // },
+    {
+      company: 'Equa Start, LLC',
+      title: 'Product, Experience, and Technical Development Lead',
+      logo: logoEquaGlobal,
+      start: 'Dec 2018',
+      end: 'Dec 2019',
+    },
+    {
+      company: 'Dash Core Group, Inc.',
+      title: 'Head of UI / UX',
+      logo: logoDash,
+      start: 'Jan 2017',
+      end: 'Jun 2018',
+    },
+    {
+      company: 'PlayerLync, LLC',
+      title: 'User Experience & Interface Lead / SCRUM Master',
+      logo: logoPlayerLync,
+      start: 'Jan 2015',
+      end: 'Jun 2017',
+    },
+    {
+      company: 'Oppenheimerfunds, Inc.',
+      title: 'Senior Programmer / Analyst - Internet',
+      logo: logoOppenheimerfunds,
+      start: 'Sep 2013',
+      end: 'Dec 2014',
+    },
+    {
+      company: 'Level 3 Communications, Inc.',
+      title: 'Senior Software Architect',
+      logo: logoLevel3,
+      start: 'Sep 2011',
+      end: 'Sep 2013',
+    },
+    {
+      company: 'Effective UI, Inc.',
+      title:
+        'Practice Lead, Software Architect, Senior Sales Engineering Consultant',
+      logo: logoEffectiveUI,
+      start: 'May 2008',
+      end: 'Apr 2011',
+    },
+    {
+      company: 'NYK Logistics, Americas',
+      title: 'Solutions Architect',
+      logo: logoNYK,
+      start: 'Jun 2006',
+      end: 'May 2008',
+    },
+    {
+      company: 'Mind Over Data, LLC',
+      title: 'Senior Business Analyst',
+      logo: logoMOD,
+      start: 'Apr 2004',
+      end: 'Jun 2006',
+    },
   ]
 
   return (
@@ -181,8 +239,13 @@ function Resume() {
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+            <div className="relative mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-100 dark:ring-0">
+              <Image
+                src={role.logo}
+                alt=""
+                className=" h-10 w-10 object-contain"
+                unoptimized
+              />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -212,8 +275,14 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
+      <Button
+        href={resumeFilePath}
+        target="_blank"
+        variant="secondary"
+        className="group mt-6 w-full"
+        download
+      >
+        Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
@@ -251,13 +320,12 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Chuck Williams - patented UI/UX developer, consultant, radio/podcast
-          host, public presenter, and cryptocurrency professional
-        </title>
+        <title>Chuck Williams</title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I'm Chuck Williams - patented UI/UX developer, consultant,
+            radio/podcast host, public presenter, and cryptocurrency
+            professional."
         />
       </Head>
       <Container className="mt-9">
@@ -273,21 +341,25 @@ export default function Home({ articles }) {
               href="https://twitter.com/chuckwilliams37"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
+              target="_blank"
             />
             <SocialLink
               href="https://www.instagram.com/chuckwilliams37/"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
+              target="_blank"
             />
             <SocialLink
               href="https://github.com/chuckwilliams37"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
+              target="_blank"
             />
             <SocialLink
               href="https://www.linkedin.com/in/chuckcwilliams/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+              target="_blank"
             />
           </div>
         </div>

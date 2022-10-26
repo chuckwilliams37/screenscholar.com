@@ -102,8 +102,7 @@ export default function About() {
                 <li>Bitcoin & cryptocurrency</li>
                 <li>meditation</li>
                 <li>conscious empathy</li>
-                <li>radical transparency</li>
-                <li>human design, tarot & astrology</li>
+                <li>human design</li>
                 <li>hobby psychology</li>
                 <li>camping</li>
                 <li>swimming</li>
@@ -127,17 +126,17 @@ export default function About() {
               </p>
 
               <p>
-                With my possession of years of LEGO assembly
-                instruction-following skills, and in frustrated childhood angst,
-                I spent the next few hours reading through the &quot;Hands-on
-                BASIC&quot; manual that came with the beige-boxed-appliance,
-                determined to find out if I could make the cryptic and
-                unfamiliar technology do my bidding. By the end of that hot,
-                humid, Minnesota summer day in Hammond, I had the computer
-                screen blinking black & white in a timmed &quot;goto&quot; loop
-                with a &quot;wait&quot; command between screen redraws. By the
-                end of the next day, I had incrementally improved my first
-                strobe program with arrow commands to change speed and color.
+                With my seasoned years of LEGO assembly skills, and frustrated
+                childhood angst, I spent the next few hours reading through the
+                &quot;Hands-on BASIC&quot; manual that came with the
+                beige-boxed-appliance, determined to find out if I could make
+                the cryptic and unfamiliar technology do my bidding. By the end
+                of that hot, humid, Minnesota summer day in Hammond, I had the
+                computer screen blinking black & white in a timmed
+                &quot;goto&quot; loop with a &quot;wait&quot; command between
+                screen redraws. By the end of the next day, I had incrementally
+                improved my first strobe program with arrow commands to change
+                speed and color.
               </p>
               <p>
                 In that moment I knew that if I could make computers do what I
