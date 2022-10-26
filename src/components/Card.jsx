@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import Image from 'next/future/image'
 
 function ChevronRightIcon(props) {
   return (
@@ -61,6 +62,22 @@ Card.Cta = function CardCta({ children }) {
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
     </div>
+  )
+}
+
+Card.CoverImage = function CardCoverImage({ src, alt = '' }) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={320}
+      height={240}
+      className={clsx(
+        'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+        'h-16 w-16'
+      )}
+      priority
+    />
   )
 }
 
