@@ -28,7 +28,7 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-70 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -72,10 +72,7 @@ Card.CoverImage = function CardCoverImage({ src, alt = '' }) {
       alt={alt}
       width={320}
       height={240}
-      className={clsx(
-        'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-        'h-16 w-16'
-      )}
+      className={clsx('rounded-10 bg-zinc-100 object-cover dark:bg-zinc-800')}
       priority
     />
   )

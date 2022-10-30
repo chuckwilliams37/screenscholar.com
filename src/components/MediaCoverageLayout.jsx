@@ -33,7 +33,7 @@ export function MediaCoverageLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Chuck Williams`}</title>
+        <title>{`Chuck Williams in the Media | ${meta.mediaItemTitle}`}</title>
         <meta name="description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">
@@ -51,8 +51,11 @@ export function MediaCoverageLayout({
             )}
             <article>
               <header className="flex flex-col">
+                <span className="dark: text-base text-zinc-400 text-zinc-600">
+                  {meta.mediaProducer}
+                </span>
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                  {meta.title}
+                  {meta.mediaItemTitle}
                 </h1>
                 <time
                   dateTime={meta.date}
@@ -61,7 +64,17 @@ export function MediaCoverageLayout({
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
+                <div className="mt-10"></div>
               </header>
+
+              <iframe
+                id="odysee-iframe"
+                width="560"
+                height="315"
+                src={meta.mediaItemURL}
+                allowfullscreen
+              ></iframe>
+
               <Prose className="mt-8">{children}</Prose>
             </article>
           </div>

@@ -3,6 +3,8 @@ import { MediaCoverageLayout } from '@/components/MediaCoverageLayout'
 export const meta = {
   mediaProducer: 'Digital Cash Rundown',
   mediaProducerURL: 'https://odysee.com/@DigitalCashNetwork:c',
+  mediaItemURL:
+    'https://odysee.com/$/embed/@DigitalCashNetwork:c/Digital-Cash-Rundown-16:1?r=5LgmMfcfxvfo9yJZzruyoeZNxStdxMsc&autoplay=true',
   mediaCoverImage:
     'https://thumbnails.odycdn.com/optimize/s:390:220/quality:85/plain/https://spee.ch/e/1ab9abdd993dd4ea.png',
   mediaItemTitle:
@@ -11,3 +13,7 @@ export const meta = {
   description:
     'The incomparable Chuck Williams, Chief Experience Officer at Flote, comes on the Rundown to talk the latest happening in crypto, including the NFT revolution taking the world by storm, and inadequacies inherent in the current NFT setups. We also talk the tokenization of real estate, how it can truly revolutionize the world, and the barriers it needs to overcome before we get to mass adoption. Finally, we talk the latest happenings with Dash, and the Flote roadmap.',
 }
+
+export default (props) => <MediaCoverageLayout meta={meta} {...props} /
+
+>

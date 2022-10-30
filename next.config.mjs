@@ -11,6 +11,17 @@ const nextConfig = {
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'thumbnails.odycdn.com',
+        port: '',
+        pathname: '/optimize/**',
+      },
+    ],
+  },
 }
 
 const withMDX = nextMDX({

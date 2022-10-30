@@ -37,15 +37,15 @@ export default function MediaIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Media Coverage - Chuck Williams</title>
+        <title>Media - Chuck Williams</title>
         <meta
           name="description"
           content="All of my podcast appearances, hosted shows, & stage talks in chronological order wherein I share my thoughts & perspectives on cryptocurrency, economy, freedom, the practice of software development, hobby psychology, love, spirituality, and lots more."
         />
       </Head>
       <SimpleLayout
-        title="Advocating for financial freedom, best practices in software development, UX, team building, and the cryptocurrency industry."
-        intro="All of my podcast appearances, hosted shows, & stage talks in chronological order wherein I share my thoughts & perspectives on cryptocurrency, economy, freedom, the practice of software development, hobby psychology, love, spirituality, and lots more."
+        title="Media Appearances of Chuck Williams"
+        intro="All of my media, podcast appearances, hosted shows, & stage talks in chronological order wherein I share my thoughts & perspectives on cryptocurrency, economy, freedom, the practice of software development, hobby psychology, love, spirituality, and lots more."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
