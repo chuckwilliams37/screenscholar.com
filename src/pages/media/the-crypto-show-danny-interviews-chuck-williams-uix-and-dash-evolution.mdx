@@ -1,0 +1,15 @@
+import { MediaCoverageLayout } from '@/components/MediaCoverageLayout'
+
+export const meta = {
+  mediaProducer: 'DASH.org',
+  mediaProducerURL: 'https://dash.org',
+  mediaItemURL: 'https://www.youtube.com/embed/Wkg1WYDShkk',
+  mediaCoverImage:
+    'https://i.ytimg.com/vi/Wkg1WYDShkk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOW9_xGB3mS83G7wqWtPbdr7SjBw',
+  mediaItemTitle:
+    'The Crypto Show - Danny - Interviews Chuck Williams - UIX and Dash Evolution',
+  date: '2018-05-01',
+  description: `In this episode of The Crypto Show Danny and Dan talk to Chuck Williams about his role as the UIX Tech Lead of Dash and the upcoming Dash Evolution project.`,
+}
+
+export default (props) => <MediaCoverageLayout meta={meta} {...props} />

@@ -1,0 +1,14 @@
+import { MediaCoverageLayout } from '@/components/MediaCoverageLayout'
+
+export const meta = {
+  mediaProducer: 'DASH.org',
+  mediaProducerURL: 'https://dash.org',
+  mediaItemURL: 'https://www.youtube.com/embed/823-VrmLTqw',
+  mediaCoverImage:
+    'https://i.ytimg.com/vi/823-VrmLTqw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMt2O1LWnbjQs6uQK4G0ynBvtvuA',
+  mediaItemTitle: 'Chuck Williams - Evolution - The Dash Conference',
+  date: '2017-10-13',
+  description: `Chuck Williams presents 'A Why, a Bit of How, a Few What's and When" for the DASH Evolution Platform at the first DASH Conference in London, UK.`,
+}
+
+export default (props) => <MediaCoverageLayout meta={meta} {...props} />

@@ -44,7 +44,7 @@ export default function MediaIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Media Appearances of Chuck Williams"
+        title="Media &amp; Stage Appearances of Chuck Williams"
         intro="All of my media, podcast appearances, hosted shows, & stage talks in chronological order wherein I share my thoughts & perspectives on cryptocurrency, economy, freedom, the practice of software development, hobby psychology, love, spirituality, and lots more."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

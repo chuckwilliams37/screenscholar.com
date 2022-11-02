@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Container } from '@/components/Container'
 import { formatDate } from '@/lib/formatDate'
 import { Prose } from '@/components/Prose'
+import Link from 'next/link'
 
 function ArrowLeftIcon(props) {
   return (
@@ -52,7 +53,9 @@ export function MediaCoverageLayout({
             <article>
               <header className="flex flex-col">
                 <span className="dark: text-base text-zinc-400 text-zinc-600">
-                  {meta.mediaProducer}
+                  <Link target="_blank" href={meta.mediaProducerURL}>
+                    {meta.mediaProducer}
+                  </Link>
                 </span>
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                   {meta.mediaItemTitle}

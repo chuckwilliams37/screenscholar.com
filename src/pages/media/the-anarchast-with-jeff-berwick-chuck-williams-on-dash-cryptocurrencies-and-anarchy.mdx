@@ -1,0 +1,15 @@
+import { MediaCoverageLayout } from '@/components/MediaCoverageLayout'
+
+export const meta = {
+  mediaProducer: 'The Anarchast',
+  mediaProducerURL: 'https://anarchast.com',
+  mediaItemURL: 'https://www.youtube.com/embed/quX6m75XMr0',
+  mediaCoverImage:
+    'https://i.ytimg.com/vi/quX6m75XMr0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3qaBjvwvuIGAqRkfVFyMzsVprSA',
+  mediaItemTitle:
+    'Jeff Berwick of The Anarchast Interviews Chuck Williams on Dash, Cryptocurrencies and Anarchy',
+  date: '2017-10-04',
+  description: `Jeff interviews Dash developer, Chuck Williams. Topics include: change without force, the Dash cryptocurrency, bringing a good experience to end users, the Dash incentive system and master node voting process, Dash Copay wallet, the Evolution platform, payment pay name, instant send transactions and scalability, purchasing Dash, Cryptopulco at Anarchapulco 2018`,
+}
+
+export default (props) => <MediaCoverageLayout meta={meta} {...props} />
