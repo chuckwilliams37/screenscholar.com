@@ -1,0 +1,15 @@
+import { MediaCoverageLayout } from '@/components/MediaCoverageLayout'
+
+export const meta = {
+  mediaProducer: 'Dash News',
+  mediaProducerURL: 'https://dashnews.org/',
+  mediaItemURL: 'https://www.youtube.com/embed/FgO3t7u-5RE',
+  mediaCoverImage:
+    'https://i.ytimg.com/vi/FgO3t7u-5RE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnfiZ-KhAq2MKW02KW6llsgs9hQA',
+  mediaItemTitle: 'Dash Podcast 93 - Feat. Chuck Williams from The Crypto Show',
+  date: '2019-03-01',
+  description:
+    'Video re-post of episode 93 of the Dash News three amigos podcast. This weeks special guest was Chuck Williams from The Crypto Show & EQUA Start.',
+}
+
+export default (props) => <MediaCoverageLayout meta={meta} {...props} />

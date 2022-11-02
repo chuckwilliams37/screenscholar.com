@@ -20,6 +20,12 @@ const nextConfig = {
         port: '',
         pathname: '/optimize/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/vi/**',
+      },
     ],
   },
 }

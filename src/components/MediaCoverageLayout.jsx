@@ -75,6 +75,10 @@ export function MediaCoverageLayout({
                 allowfullscreen
               ></iframe>
 
+              <section className="mt-5 text-zinc-700 dark:text-zinc-300">
+                {meta.description}
+              </section>
+
               <Prose className="mt-8">{children}</Prose>
             </article>
           </div>
