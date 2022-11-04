@@ -32,10 +32,10 @@ export default function App({ Component, pageProps, router }) {
         <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
-          <Analytics />
         </main>
         <Footer />
       </div>
+      <Analytics />
     </>
   )
 }
