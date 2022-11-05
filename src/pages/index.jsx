@@ -12,6 +12,9 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
+
+import NewsletterSignupSection from '@/components/NewsletterSignupSection.jsx'
+
 import image1 from '@/images/photos/image-1.png'
 import image2 from '@/images/photos/image-2.png'
 import image3 from '@/images/photos/image-3.png'
@@ -366,6 +369,7 @@ export default function Home({ articles }) {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
+        <NewsletterSignupSection />
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16 text-zinc-600 dark:text-zinc-400">
             {/* {articles.map((article) => (
@@ -394,7 +398,7 @@ export default function Home({ articles }) {
             </p>
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            <Newsletter />
             <Resume />
           </div>
         </div>
