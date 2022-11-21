@@ -115,7 +115,7 @@ function Article({ article }) {
 function MediaItem({ mediaItem }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${mediaItem.slug}`}>
+      <Card.Title href={`/media/${mediaItem.slug}`}>
         {mediaItem.mediatItemTitle}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={mediaItem.date} decorate>
