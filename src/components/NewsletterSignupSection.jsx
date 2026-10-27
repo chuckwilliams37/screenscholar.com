@@ -4,43 +4,51 @@ import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 
 export default function NewsletterSignupSection() {
   const [email, setEmail] = useState('')
+  const [company, setCompany] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [formEntryState, setFormEntryState] = useState(null)
 
-  const pipeDreamWorkflowTriggerUrl = 'https://eo18tohcqd2iasl.m.pipedream.net'
-
   const subscribeEmailToNewsletter = async () => {
-    console.log('subscribeEmailToNewsletter()')
+    setFormEntryState('submitting')
+    setErrorMessage('')
     try {
-      // const res = await fetch(pipeDreamWorkflowTriggerUrl)
-      setFormEntryState('submitting')
-
-      const response = await fetch(pipeDreamWorkflowTriggerUrl, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
         headers: {
+          Accept: 'application/json',
           'Content-Type': 'application/json',
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        redirect: 'follow', // manual, *follow, error
-        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
         body: JSON.stringify({
-          email: email,
-        }), // body data type must match "Content-Type" header
+          email,
+          company,
+        }),
       })
 
-      const subscriptionResult = await response.json()
-      // console.log('subscribeEmailToNewsletter().result', subscriptionResult)
+      let payload = null
+      try {
+        payload = await response.json()
+      } catch {
+        payload = null
+      }
+
+      if (!response.ok || !payload?.ok) {
+        setErrorMessage(
+          payload?.error || 'Something went wrong. Please try again.'
+        )
+        setFormEntryState('error')
+        return
+      }
+
       setFormEntryState('submitted')
-      // console.log('formEntryState', formEntryState)
-    } catch (err) {
-      console.log("Error in 'subscribeEmailToNewsletter()'", err)
+    } catch {
+      setErrorMessage('Something went wrong. Please try again.')
+      setFormEntryState('error')
     }
   }
 
   const onFormSubmit = (e) => {
     e.preventDefault()
+    if (formEntryState === 'submitting') return
     subscribeEmailToNewsletter()
   }
 
@@ -98,7 +106,19 @@ export default function NewsletterSignupSection() {
           </div>
           <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
             <>
-              <form className="sm:flex">
+              <form className="relative sm:flex" onSubmit={onFormSubmit}>
+                <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                  />
+                </div>
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
@@ -113,26 +133,28 @@ export default function NewsletterSignupSection() {
                   className="w-full rounded-md border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-700"
                   placeholder="Enter your email"
                 />
-                {formEntryState === null && (
-                  <button
-                    type="submit"
-                    className="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-500 px-5 py-3 text-base font-medium text-white hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
-                    onClick={onFormSubmit}
-                  >
-                    Notify me
-                  </button>
-                )}
-                {formEntryState === 'submitting' && (
+                {formEntryState === 'submitting' ? (
                   <button
                     type="submit"
                     disabled
                     className="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-500 px-5 py-3 text-base font-medium text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
-                    onClick={onFormSubmit}
                   >
                     Saving...
                   </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-500 px-5 py-3 text-base font-medium text-white hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  >
+                    Notify me
+                  </button>
                 )}
               </form>
+              {errorMessage && (
+                <p className="mt-3 text-sm font-medium text-white" role="alert">
+                  {errorMessage}
+                </p>
+              )}
             </>
             <p className="mt-3 text-sm text-teal-100">
               I care about the protection of your data. Read my{' '}
